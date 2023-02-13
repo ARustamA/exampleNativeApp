@@ -1,20 +1,40 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Button, Alert, Image, TouchableHighlight } from 'react-native';
 
 export default function App() {
+  const handleButton = () => Alert.alert('title', 'button press', [
+    { text: 'da', onPress: () => console.log('yes') },
+    { text: 'cancel', onPress: () => console.log('no') }
+  ]);
+  const handleButton2 = () => Alert.prompt('title', (text) => console.log(text));
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.text} > your app!</Text>
+      <Button title='press to me' onPress={handleButton} color='red' />
+      <Button title='press' onPress={handleButton2} color='blue' />
+      {/* <Image source={require('./assets/adaptive-icon.png')}/> */}
+      <TouchableHighlight onPress={handleButton}>
+      <Image source={{
+        width: 200,
+        height:150,
+        uri: "data:image/jpeg;base64,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"
+      }} />
+      </TouchableHighlight>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#f3f3f3',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
+  text: {
+    paddingTop: 120,
+    color: 'red'
+  }
 });

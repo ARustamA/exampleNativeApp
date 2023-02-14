@@ -1,11 +1,10 @@
 import * as Font from 'expo-font';
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as SplashScreen from 'expo-splash-screen';
-import Main from "./components/Main";
+import Navigate from "./navigate";
 import Lottie from 'lottie-react-native';
 import { Animated, Easing } from 'react-native';
-
-
+import React from 'react';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -52,6 +51,6 @@ export default function App() {
   }
 
   return (
-    <Main onLayout={onLayoutRootView} />
+    <Navigate onLayout={onLayoutRootView} />
   )
 }

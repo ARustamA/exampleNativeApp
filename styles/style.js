@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
 
       // justifyContent: 'center',
-      padding: 60
+      padding: 20
    },
    text: {
       color: 'white',

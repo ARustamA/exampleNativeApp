@@ -1,5 +1,5 @@
 import Main from "./components/Main";
-import Contact from "./components/Contact";
+import FullNews from "./components/FullNews";
 import { NavigationContainer } from '@react-navigation/native';
 // import { createNativeStackNavigator } from '@react-navigation/stack';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -19,7 +19,7 @@ export default function Navigate() {
             {/* <Stack.Screen name="Main">
                {(props) => <Main {...props} extraData={someData} />}
             </Stack.Screen> */}
-            <Stack.Screen name="Contact" component={Contact} options={{ title: 'Contact' }} />
+            <Stack.Screen name="FullNews" component={FullNews} options={{ title: 'FullNews' }} />
          </Stack.Navigator>
       </NavigationContainer>
    )

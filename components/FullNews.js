@@ -2,15 +2,17 @@ import { StyleSheet, Text, View } from "react-native";
 import { styles } from "../styles/style";
 
 
-export default function Contact({ navigation: { goBack } }) {
+export default function FullNews({ route }) {
    // const loadScene = () => {
    //    goBack();
    // }
    return (
       <View
          style={styles.main}>
-         <Text style={styles.text}>Main page</Text>
-         {/* <Button title="open page" onPress={loadScene} /> */}
+         <Text style={styles.text}>{route.params.name}</Text>
+         <Text >{route.params.anons}</Text>
+         <Text>{route.params.full}</Text>
+         
 
       </View>
    );

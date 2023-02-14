@@ -13,18 +13,18 @@ export default function Main({ navigation: { navigate } }) {
       navigate('FullNews', item)
    }
    const [news, setNews] = useState([
-      { name: 'google', anons: 'google vwwqd', full: 'google is cool' },
-      { name: 'apple', anons: 'apple vwwqd', full: 'apple is cool' },
-      { name: 'facebook', anons: 'facebook vwwqd', full: 'facebook is cool' },
+      { name: 'google', anons: 'google vwwqd', full: 'google is cool', key:1 },
+      { name: 'apple', anons: 'apple vwwqd', full: 'apple is cool',key:2 },
+      { name: 'facebook', anons: 'facebook vwwqd', full: 'facebook is cool',key:3 },
 
    ])
    return (
       <View
          style={styles.main}>
-         <Text style={styles.text}>Main page</Text>
+         {/* <Text style={styles.text}>Main page</Text> */}
          <FlatList data={news} renderItem={
             ({ item }) => (
-               <TouchableOpacity onPress={()=>onPressNews(item)}>
+               <TouchableOpacity onPress={()=>onPressNews(item)} key={item.key}>
                   <Text>{item.name}</Text>
                   <Text>{item.anons}</Text>
 

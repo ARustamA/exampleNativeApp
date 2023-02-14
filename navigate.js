@@ -14,19 +14,27 @@ export default function Navigate() {
       <NavigationContainer>
 
          <Stack.Navigator initialRouteName="Main">
-            <Stack.Screen name="Main" component={Main} 
-            options={{ title: 'Main', cardStyle: style.header }} />
+            <Stack.Screen name="Main" component={Main}
+               options={{
+                  title: 'Main',
+                  headerStyle: style.header, 
+                  headerTitleStyle: {
+                     color: 'blue', textAlign: 'center'},
+                     headerTitleAlign: 'center'
+               }} />
             {/* <Stack.Screen name="Main">
                {(props) => <Main {...props} extraData={someData} />}
             </Stack.Screen> */}
-            <Stack.Screen name="FullNews" component={FullNews} options={{ title: 'FullNews' }} />
+            <Stack.Screen name="FullNews" component={FullNews}
+               options={{ title: 'FullNews', headerTitleAlign: 'center' }} />
          </Stack.Navigator>
       </NavigationContainer>
    )
 }
 const style = StyleSheet.create({
    header: {
-      backgroundColor: 'red',
-      borderColor: 'yellow'
+      backgroundColor: '#eb5b3b',
+      borderBottomColor: 'yellow',
+      
    }
 })
